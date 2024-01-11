@@ -6,7 +6,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route></Route>
+        <Route path="/" element={<div> KEK</div>} />
       </Routes>
     </BrowserRouter>
   );
