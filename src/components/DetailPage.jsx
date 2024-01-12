@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
+import Gallery from "./Gallery";
 
 function DetailPage(props) {
   const params = useParams();
@@ -102,7 +103,8 @@ function DetailPage(props) {
           </Col>
           <Col xs={12} className=" d-flex justify-content-center">
             <Row className=" gap-1 justify-content-center">
-              {location.list.map((meteoInterval, index) => (
+              <Gallery list={location} handleSetInterval={handleSetInterval} />
+              {/*               {location.list.map((meteoInterval, index) => (
                 <Col key={`interval-${index}`} xs={2} onClick={() => setSelectedInterval(meteoInterval)}>
                   <Card>
                     <Card.Img
@@ -115,7 +117,7 @@ function DetailPage(props) {
                     </Card.Body>
                   </Card>
                 </Col>
-              ))}
+              ))} */}
             </Row>
           </Col>
         </Row>

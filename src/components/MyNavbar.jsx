@@ -18,9 +18,9 @@ function MyNavbar(props) {
   }
 
   return (
-    <Navbar expand="md" className="bg-body-tertiary">
+    <Navbar expand="md" className="bg-navbar">
       <Container fluid>
-        <Navbar.Brand as={NavLink} to={"/"}>
+        <Navbar.Brand as={NavLink} to={"/"} className=" text-white">
           METEO
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -28,7 +28,7 @@ function MyNavbar(props) {
           <Nav className="me-auto"></Nav>
           {params.location && (
             <Form inline="true" onSubmit={handleSubmit}>
-              <Row>
+              <Row className=" justify-content-center">
                 <Col xs="auto">
                   <Form.Control
                     type="text"

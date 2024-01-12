@@ -1,3 +1,39 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
-.accordion-button {
+body {
+  background-image: linear-gradient(11deg, rgba(96, 151, 208, 1) 0%, rgba(75, 45, 133, 1) 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100dvh;
+  color: white;
+}
+.bg-navbar {
+  background-color: rgba(80, 69, 150, 0.1);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5% !important;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.carousel-inner img {
+  transition: all 0.2s !important;
+}
+
+.carousel-inner img:hover {
+  z-index: 1 !important;
+  scale: 1.2 !important;
+}
+/* .carousel-inner:has(img:hover) img:not(:hover) {
+  opacity: 0.1;
+} */
+.carousel .row div {
+  max-height: 330px !important;
+}
+.carousel .row div img {
+  object-fit: cover !important;
+  height: 330px;
+}
+.carousel-indicators {
+  background-color: black;
 }
