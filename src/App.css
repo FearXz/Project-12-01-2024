@@ -28,8 +28,7 @@ body {
 /* .carousel-inner:has(img:hover) img:not(:hover) {
   opacity: 0.1;
 } */
-.carousel .row div {
-}
+
 .carousel .row div img {
   object-fit: cover !important;
   height: 250px;
