@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { Col, Container, Row } from "react-bootstrap";
 function DetailPage(props) {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
@@ -29,7 +30,7 @@ function DetailPage(props) {
   async function fetchLocation(coordinate) {
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinate.lat}&lon=${coordinate.lon}&appid=a31b5aaa825d20eec78f660c7a56e5f2`
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinate.lat}&lon=${coordinate.lon}&units=metric&appid=a31b5aaa825d20eec78f660c7a56e5f2`
       );
 
       if (response.ok) {
@@ -59,7 +60,18 @@ function DetailPage(props) {
     }
   }, [coordinate]);
 
-  return <div>DetailPage</div>;
+  return (
+    location && (
+      <Container>
+        <Row>
+          <Col xs={12} className=" d-flex justify-content-center">
+            <h1>{location.city.name}</h1>
+          </Col>
+          <Col xs={12} className=" d-flex justify-content-center"></Col>
+        </Row>
+      </Container>
+    )
+  );
 }
 
 export default DetailPage;
