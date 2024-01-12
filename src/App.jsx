@@ -6,11 +6,16 @@ import MyMain from "./components/MyMain";
 import MyNavbar from "./components/MyNavbar";
 
 function App() {
-  const [valueSearched, setValueSearched] = useState("");
+  const [valueSearched, setValueSearched] = useState(null);
+  const [location, setLocation] = useState(null);
 
   function handleSearchSubmit(value) {
     setValueSearched(value);
     console.log(value);
+  }
+
+  function handleLocation(locationObj) {
+    setLocation(locationObj);
   }
 
   return (
@@ -21,7 +26,7 @@ function App() {
           element={
             <>
               <MyNavbar callbackSubmit={handleSearchSubmit} />
-              <MyMain valueToSearch={valueSearched} />
+              <MyMain valueToSearch={valueSearched} handleLocation={handleLocation} />
             </>
           }
         />
