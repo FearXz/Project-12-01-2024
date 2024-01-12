@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./assets/css/style.min.css";
 import "./App.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import MyMain from "./components/MyMain";
 import MyNavbar from "./components/MyNavbar";
 import DetailPage from "./components/DetailPage";
@@ -31,7 +33,7 @@ function App() {
           element={
             <>
               <MyNavbar callbackSubmit={handleSearchSubmit} />
-              <DetailPage location={valueSearched} />
+              <DetailPage />
             </>
           }
         />
