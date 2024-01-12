@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Form, Nav, Navbar, Row } from "react-bootstrap";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function MyNavbar(props) {
+  const navigate = useNavigate();
   const [valueSearched, setValueSearched] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
     props.callbackSubmit(valueSearched);
+    navigate(`/location/${valueSearched}`);
   }
   function handleSearch(event) {
     console.log(event.target.value);
@@ -16,7 +19,9 @@ function MyNavbar(props) {
   return (
     <Navbar expand="md" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand as={NavLink} to={"/"}>
+          React-Bootstrap
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
