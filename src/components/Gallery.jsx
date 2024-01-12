@@ -95,8 +95,11 @@ const Gallery = (props) => {
                   <Card>
                     <Card.Img variant="top" src={` https://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png`} />
                     <Card.Body>
-                      <Card.Title>{item.dt_txt}</Card.Title>
-                      <Card.Text></Card.Text>
+                      <Card.Title>{`C° ${item.main.temp}`} </Card.Title>
+                      <Card.Subtitle className="mb-2 text-muted">
+                        {new Date(item.dt_txt).toTimeString().split(" ")[0]}
+                      </Card.Subtitle>
+                      <Card.Text className="text-muted">{new Date(item.dt_txt).toISOString().split("T")[0]}</Card.Text>
                     </Card.Body>
                   </Card>
                 </Col>

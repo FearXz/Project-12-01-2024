@@ -5,6 +5,7 @@ body {
   background-size: cover;
   min-height: 100dvh;
   color: white;
+  overflow-x: hidden;
 }
 .bg-navbar {
   background-color: rgba(80, 69, 150, 0.1);
@@ -28,11 +29,10 @@ body {
   opacity: 0.1;
 } */
 .carousel .row div {
-  max-height: 330px !important;
 }
 .carousel .row div img {
   object-fit: cover !important;
-  height: 330px;
+  height: 250px;
 }
 .carousel-indicators {
   background-color: black;

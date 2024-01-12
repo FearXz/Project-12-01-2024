@@ -78,26 +78,26 @@ function DetailPage(props) {
           <Col className=" mb-5">
             <Row className=" justify-content-center">
               <Col xs={12} className=" d-flex justify-content-center">
-                <h1>{location.city.name}</h1>
+                <h1 className=" mb-5">{location.city.name}</h1>
               </Col>
               <Col xs={12}>
-                <h2>{selectedInterval.dt_txt}</h2>
+                <h2 className=" mb-5">{selectedInterval.dt_txt}</h2>
               </Col>
               <Col xs={6}>
-                <h2>Temperature</h2>
-                <p>Media : {selectedInterval.main.temp}</p>
-                <p>Minima : {selectedInterval.main.temp_min}</p>
-                <p>Massina : {selectedInterval.main.temp_max}</p>
+                <h2 className=" mb-5">Temperature</h2>
+                <p className=" fs-3">Media : {selectedInterval.main.temp}</p>
+                <p className=" fs-3">Minima : {selectedInterval.main.temp_min}</p>
+                <p className=" fs-3">Massina : {selectedInterval.main.temp_max}</p>
               </Col>
               <Col xs={6}>
                 <h2>Weather</h2>
                 <img
                   style={{ maxWidth: "50" }}
-                  src={` https://openweathermap.org/img/wn/${selectedInterval.weather[0].icon}.png`}
+                  src={` https://openweathermap.org/img/wn/${selectedInterval.weather[0].icon}@2x.png`}
                   alt="icon"
                 />
-                <p>{selectedInterval.weather[0].main}</p>
-                <p>{selectedInterval.weather[0].description}</p>
+                <p className=" fs-3">{selectedInterval.weather[0].main}</p>
+                <p className=" fs-3">{selectedInterval.weather[0].description}</p>
               </Col>
             </Row>
           </Col>
