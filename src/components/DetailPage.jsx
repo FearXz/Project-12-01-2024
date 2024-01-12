@@ -90,7 +90,7 @@ function DetailPage(props) {
                 <p>Massina : {selectedInterval.main.temp_max}</p>
               </Col>
               <Col xs={6}>
-                <h2>weather</h2>
+                <h2>Weather</h2>
                 <img
                   style={{ maxWidth: "50" }}
                   src={` https://openweathermap.org/img/wn/${selectedInterval.weather[0].icon}.png`}
