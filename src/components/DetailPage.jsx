@@ -80,24 +80,46 @@ function DetailPage(props) {
               <Col xs={12} className=" d-flex justify-content-center">
                 <h1 className=" mb-5">{location.city.name}</h1>
               </Col>
-              <Col xs={12}>
-                <h2 className=" mb-5">{selectedInterval.dt_txt}</h2>
+              <Col xs={12} className=" mb-5">
+                <Row>
+                  <Col xs={6}>
+                    <Row>
+                      <Col
+                        xs={10}
+                        lg={10}
+                        xxl={8}
+                        className=" bg-body-secondary  text-black  rounded-4 shadow bg-bubble "
+                      >
+                        <h2 className="">{new Date(selectedInterval.dt_txt).toISOString().split("T")[0]}</h2>
+                        <h3>{new Date(selectedInterval.dt_txt).toTimeString().split(" ")[0]}</h3>
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
               </Col>
               <Col xs={6}>
-                <h2 className=" mb-5">Temperature</h2>
-                <p className=" fs-3">Media : {selectedInterval.main.temp}</p>
-                <p className=" fs-3">Minima : {selectedInterval.main.temp_min}</p>
-                <p className=" fs-3">Massina : {selectedInterval.main.temp_max}</p>
+                <Row>
+                  <Col xs={10} lg={10} xxl={8} className=" bg-body-secondary  text-black  rounded-4 shadow bg-bubble ">
+                    <h2 className=" mb-5">Temperature</h2>
+                    <p className=" fs-3">Media : {selectedInterval.main.temp}</p>
+                    <p className=" fs-3">Minima : {selectedInterval.main.temp_min}</p>
+                    <p className=" fs-3">Massina : {selectedInterval.main.temp_max}</p>
+                  </Col>
+                </Row>
               </Col>
               <Col xs={6}>
-                <h2>Weather</h2>
-                <img
-                  style={{ maxWidth: "50" }}
-                  src={` https://openweathermap.org/img/wn/${selectedInterval.weather[0].icon}@2x.png`}
-                  alt="icon"
-                />
-                <p className=" fs-3">{selectedInterval.weather[0].main}</p>
-                <p className=" fs-3">{selectedInterval.weather[0].description}</p>
+                <Row>
+                  <Col xs={10} lg={10} xxl={8} className=" bg-body-secondary  text-black  rounded-4 shadow bg-bubble ">
+                    <h2>Weather</h2>
+                    <img
+                      style={{ maxWidth: "50" }}
+                      src={` https://openweathermap.org/img/wn/${selectedInterval.weather[0].icon}@2x.png`}
+                      alt="icon"
+                    />
+                    <p className=" fs-3">{selectedInterval.weather[0].main}</p>
+                    <p className=" fs-3">{selectedInterval.weather[0].description}</p>
+                  </Col>
+                </Row>
               </Col>
             </Row>
           </Col>
